@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<style>
+   *{
+      font-size: 70px;
+      font-weight: bolder;
+      margin: 10px;
+      color: blueviolet;
+   }
+   .buttonclass{
+      color: rgb(255, 255, 255);
+      background-color: rgb(38, 156, 111);
+   }
+   .material-icons
+   {
+      color: rgb(31, 25, 0);
+      font-size: 40px;
+
+   }
+</style>
+<body>
+   <!-- Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia vitae cupiditate, fugit fuga sint in dolorum consequatur dignissimos pariatur, quia facere explicabo voluptatem sed consectetur aliquid obcaecati, et iusto debitis?
+   <p id="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam officiis magnam ad asperiores fuga voluptate perferendis iure aspernatur quia aliquid dolorem quod non quos, quo doloremque consequuntur sunt est laudantium.</p> -->
+<!-- 
+   <button onfocus="myfun1()">Click 1</button>
+ <button onpointermove="myfun2()">Click2 </button>
+ <button onkeydown="myfun3()">Click3 </button>
+ <button onmouseleave="myfun4()">Click4 </button>
+ <button onkeypress="myfun5()">Click5 </button>
+ <button onmouseenter="myfun6()" onmouseleave="myfun()" >Click6 </button>
+<script>
+   function myfun()
+   {
+      document.getElementById("para").style.backgroundColor="white";
+      document.getElementById("para").style.color="black";
+   }
+   function myfun1() {
+      document.getElementById("para").style.backgroundColor="black";
+      document.getElementById("para").style.color="white";
+      
+   }
+  function myfun2() {
+      document.getElementById("para").style.backgroundColor="black";
+      document.getElementById("para").style.color="white";
+      
+   }
+  function myfun3() {
+      document.getElementById("para").style.backgroundColor="black";
+      document.getElementById("para").style.color="white";
+      
+   }
+  function myfun4() {
+      document.getElementById("para").style.backgroundColor="black";
+      document.getElementById("para").style.color="white";
+      
+   }
+   function myfun5() {
+      document.getElementById("para").style.backgroundColor="blue";
+      document.getElementById("para").style.color="white";
+      
+   }
+   function myfun6() {
+      document.getElementById("para").style.backgroundColor="red";
+      document.getElementById("para").style.color="white";
+      var str="dfsfsdsdf";
+      document.createElement("str");
+      
+   }
+</script> -->
+<script>
+   // var da=new Date();
+//   var sec=da.getUTCSeconds();
+//   var min=da.getUTCMinutes();
+//   var hour=da.getUTCHours();
+// var time=da.toLocaleDateString();
+// setInterval(clockfun,0);
+// function clockfun()
+// {
+   
+//    var da=new Date();
+// var time =da.toLocaleTimeString();
+// // var time=da.getSeconds();
+// //   document.write(time);
+//  document.getElementById('update').innerText=time;
+// }
+// var str=0;
+// setInterval(myfun,1000)
+// function myfun()
+// {
+   
+//       document.write(str);
+      
+   
+// }
+ </script>
+ <span id="hour">00</span>
+ <span>Hour</span>
+<span id="min">00</span>
+<span>min</span>
+<span id="sec" >00</span>
+<span>sec</span>
+<span id="mili"></span>
+<br>
+<button class="buttonclass" onclick="start()">Start<i class="large material-icons">pause_circle_outline</i></button>
+<button class="buttonclass" onclick="stop()">Stop<i class="large material-icons"> play_circle_outline</i></button>
+<button class="buttonclass" onclick="reset()">Reset<i class="large material-icons"> replay</i></button>
+<!-- <span></span> -->
+<!-- <p id="update"></p> -->
+<script>
+   var ihour=0;
+   var imin=0;
+   var isec=0;
+   var imili=0;
+   var check=false;
+   function start()
+   {
+      check=true;
+      myfun();
+   }
+   function stop()
+   {
+      check=false;
+   }
+   function reset()
+   {
+      check=false;
+       ihour=0;
+   imin=0;
+   isec=0;
+   imili=0;
+   document.getElementById('mili').innerHTML='00';
+   document.getElementById('sec').innerHTML='00';
+   document.getElementById('min').innerHTML='00';   
+   document.getElementById('hour').innerHTML='00';
+   }
+   // setTimeout(myfun,1);
+ function myfun()
+   {
+     if(check==true)
+     {
+      setTimeout(myfun,1);
+     
+      imili++;
+      // update;
+      document.getElementById('mili').innerHTML=imili;
+      if(imili==100)
+      {
+         isec++;
+         imili=0;
+         if(isec<10)
+         {
+            document.getElementById('sec').innerHTML='0'+isec;
+         }
+         else
+         {
+            document.getElementById('sec').innerHTML=isec;
+         }
+         // setTimeout(myfun,1);
+      }
+      // document.getElementById('sec').innerHTML=isec;
+      if(isec==60)
+      {
+         isec=0;
+         imin++;
+         if(imin<10)
+         {
+            document.getElementById('min').innerHTML="0"+imin;
+         }
+         else
+         {
+            document.getElementById('min').innerHTML=imin;
+         }
+      }
+      // document.getElementById('min').innerHTML=imin;
+      // setTimeout(myfun,1);
+   }
+   }
+</script>
+</body>
+</html>
